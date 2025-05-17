@@ -1,0 +1,40 @@
+{
+  "version": "1",
+  "timestamp": "2025-05-16T17:52:09.744Z",
+  "tables": {
+    "products": {
+      "columns": [
+        "id",
+        "name",
+        "description",
+        "price",
+        "category",
+        "sku",
+        "inStock",
+        "attributes",
+        "createdAt",
+        "updatedAt",
+        "enableRLS"
+      ]
+    },
+    "categories": {
+      "columns": [
+        "id",
+        "name",
+        "description",
+        "parentId",
+        "enableRLS"
+      ]
+    },
+    "product_search_history": {
+      "columns": [
+        "id",
+        "query",
+        "userId",
+        "timestamp",
+        "results",
+        "enableRLS"
+      ]
+    }
+  }
+}

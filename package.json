@@ -1,0 +1,40 @@
+{
+	"dependencies": {
+		"@slack/bolt": "^4.3.0",
+		"dotenv": "^16.5.0",
+		"drizzle-orm": "^0.43.1",
+		"openai": "^4.97.0",
+		"pg": "^8.16.0",
+		"typesense": "^1.7.1"
+	},
+	"name": "slack_bot",
+	"version": "1.0.0",
+	"main": "dist/index.js",
+	"devDependencies": {
+		"@types/node": "^22.15.16",
+		"@types/pg": "^8.15.2",
+		"drizzle-kit": "^0.31.1",
+		"nodemon": "^3.1.10",
+		"ts-node": "^10.9.2",
+		"typescript": "^5.8.3"
+	},
+	"scripts": {
+		"build": "tsc",
+		"start": "node dist/index.js",
+		"dev": "nodemon",
+		"watch": "tsc -w",
+		"db:generate": "drizzle-kit generate",
+		"db:push": "drizzle-kit push",
+		"db:seed": "ts-node src/seed.ts",
+		"db:init": "ts-node src/init-db.ts",
+		"db:setup": "npm run db:init && npm run db:seed",
+		"setup": "npm install && npm run db:setup && npm run build",
+		"test:search": "ts-node src/test-typesense.ts",
+		"test:simple": "ts-node src/simple-test.ts"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"description": "",
+	"packageManager": "pnpm@10.8.1+sha512.c50088ba998c67b8ca8c99df8a5e02fd2ae2e2b29aaf238feaa9e124248d3f48f9fb6db2424949ff901cffbb5e0f0cc1ad6aedb602cd29450751d11c35023677"
+}
